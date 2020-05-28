@@ -1,0 +1,14 @@
+@import '../../../variables.scss';
+
+.side-menu-nav {
+  width: 200px;
+  position: absolute;
+  background: $dune;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  a {
+    font-size: 14px;
+    color: $akaroa;
+  }
+}

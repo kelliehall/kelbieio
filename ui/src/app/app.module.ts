@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { BlogModule } from './blog/blog.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ApiInterceptor } from './api.interceptor';
+import { CommonModule } from './common/common.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ApiInterceptor } from './api.interceptor';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BlogModule
+    BlogModule,
+    CommonModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

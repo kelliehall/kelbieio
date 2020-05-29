@@ -2,7 +2,9 @@
   <span class="material-icons menu-icon" (click)="toggleMenu()" *ngIf="!showMenu">
     menu
   </span>
-  <a class="kelbie-logo" href="#">kelbie.io</a>
+  <span class="material-icons kelbie-logo" [routerLink]="['/home']">
+    home
+  </span>
 </div>
 <nav class="side-menu-nav" *ngIf="showMenu">
   <span class="material-icons menu-icon" (click)="toggleMenu()">

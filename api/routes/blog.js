@@ -4,7 +4,6 @@ const blogpost = require('../controllers/blogpost');
 
 router.get('/all', (req, res) => {
   blogpost.fetchAll((response) => {
-    console.log(response);
     res.json(response);
     return;
   });

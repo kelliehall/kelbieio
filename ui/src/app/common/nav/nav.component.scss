@@ -7,8 +7,36 @@
   top: 0;
   left: 0;
   bottom: 0;
+  padding: 15px;
   a {
     font-size: 14px;
     color: $akaroa;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .active-linker {
+    color: $bazaar;
+  }
+}
+
+.menu-icon {
+  color: $akaroa;
+  cursor: pointer;
+}
+
+.top-logo-bar {
+  height: 40px;
+  width: 100%;
+  background-color: $bazaar;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px;
+  .kelbie-logo {
+    text-decoration: none;
+    color: $akaroa;
+    position: absolute;
+    right: 14px;
+    top: 7px;
   }
 }

@@ -6,6 +6,16 @@ import { Component } from "@angular/core";
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent {
+  showMenu = true;
+  links = [
+    { label : 'Home', path: '/home'},
+    { label : 'Posts', path: '/blog/view'},
+  ];
+
   constructor() {}
+
+  toggleMenu() {
+    this.showMenu = !this.showMenu;
+  }
 
 }

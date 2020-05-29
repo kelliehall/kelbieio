@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
 
 @Component({
   selector: 'kelbie-nav',
@@ -11,11 +11,13 @@ export class NavComponent {
     { label : 'Home', path: '/home'},
     { label : 'Posts', path: '/blog/view'},
   ];
+  @Output() menuOpened = new EventEmitter();
 
   constructor() {}
 
   toggleMenu() {
     this.showMenu = !this.showMenu;
+    this.menuOpened.emit(this.showMenu);
   }
 
 }

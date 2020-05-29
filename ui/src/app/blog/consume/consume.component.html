@@ -1,4 +1,4 @@
-<div *ngFor="let post of (blog$ | async) ">
+<div *ngFor="let post of (blog$ | async)">
   <p>{{post.userID}}: {{post.datePosted | date: 'short' }}</p>
   <p>{{post.content}}</p>
 </div>

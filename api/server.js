@@ -7,6 +7,7 @@ const cors = require('cors');
 
 const config = require('./config/config');
 
+const auth = require('./routes/auth');
 const blog = require('./routes/blog');
 
 mongoose.connect(`mongodb://127.0.0.1:27017/${config.db.table}`, { useNewUrlParser: true });
@@ -14,6 +15,7 @@ mongoose.connect(`mongodb://127.0.0.1:27017/${config.db.table}`, { useNewUrlPars
 app.use(bodyparser.json());
 app.use(cors());
 
+app.use('/auth', auth);
 app.use('/blog', blog);
 
 const server = app.listen(3001, () => {

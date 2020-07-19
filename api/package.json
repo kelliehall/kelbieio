@@ -17,7 +17,7 @@
     "mongoose": "^5.9.5"
   },
   "devDependencies": {
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "sanitizer": "^0.1.3"
   }
 }

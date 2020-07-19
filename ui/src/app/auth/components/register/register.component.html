@@ -1,0 +1,27 @@
+<div class="server-errors" *ngIf="error">
+  <p class="error" *ngIf="error.status == 409">username in use</p>
+</div>
+<div class="registration" [formGroup]="registerForm" (keyup.enter)="register()">
+  <div class="row header">
+    <h1>register</h1>
+  </div>
+  <div class="form-group row">
+    <label>username</label>
+    <input type="text" formControlName="username" class="form-control" required>
+  </div>
+  <div class="form-error row" *ngIf=" username.invalid">
+    <p *ngIf="username.errors.minlength?.requiredLength || username.errors.maxlength?.requiredLength">
+      username should be 3-16 characters
+    </p>
+  </div>
+  <div class="form-group row">
+    <label>password</label>
+    <input type="password" formControlName="password" class="form-control" placeholder="min length 8" required>
+  </div>
+  <div class="form-error row" *ngIf="password.invalid">
+    <p *ngIf="password.errors.minlength?.requiredLength || password.errors.maxlength?.requiredLength">
+      password should be 8-16 characters
+    </p>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="register()" [disabled]="registerForm.invalid">Submit</button>
+</div>

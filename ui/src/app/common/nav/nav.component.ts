@@ -1,4 +1,7 @@
 import { Component, EventEmitter, Output } from "@angular/core";
+import { AuthService } from '../../auth/services';
+import { BehaviorSubject } from 'rxjs';
+import { User } from '../../auth/const/user';
 
 @Component({
   selector: 'kelbie-nav',
@@ -11,9 +14,13 @@ export class NavComponent {
     { label : 'Home', path: '/home'},
     { label : 'Posts', path: '/blog/view'},
   ];
+  user$: BehaviorSubject<User> = new BehaviorSubject(null);
+
   @Output() menuOpened = new EventEmitter();
 
-  constructor() {}
+  constructor(private authService: AuthService) {
+    this.user$ = this.authService.user$;
+  }
 
   toggleMenu() {
     this.showMenu = !this.showMenu;

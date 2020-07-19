@@ -11,7 +11,6 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     RouterModule
   ],
-  providers: [],
   exports: [NavComponent]
 })
 export class CommonModule { }

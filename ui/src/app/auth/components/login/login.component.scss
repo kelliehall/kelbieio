@@ -1,0 +1,46 @@
+@import 'src/variables.scss';
+
+.login {
+  padding: 50px;
+
+  .header {
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+
+  .row:not(.header) {
+    justify-content: center;
+    align-items: center;
+
+    input {
+      margin-left: 15px;
+      width: 200px;
+      align-content: center;
+    }
+  }
+
+  .btn {
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.server-errors {
+  display: flex;
+  justify-content: center;
+  background: $orange;
+  color: $black;
+
+  .error {
+    margin: 0 auto;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 25px;
+  }
+}
+
+.form-error {
+  font-size: 11px;
+  font-style: italic;
+}

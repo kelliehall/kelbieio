@@ -2,9 +2,9 @@
   <span class="material-icons menu-icon" (click)="toggleMenu()" *ngIf="!showMenu">
     menu
   </span>
-  <div class="kelbie-logo">
+  <div class="kelbie-logo" [routerLink]="['/home']">
     <span class="thats-me">Kellie Hall</span>
-    <span class="material-icons home-button" [routerLink]="['/home']">
+    <span class="material-icons home-button">
       home
     </span>
   </div>
@@ -18,4 +18,8 @@
       <a class="nav-link" [routerLink]="link.path" routerLinkActive="active-linker">{{link.label}}</a>
     </li>
   </ul>
+  <div class="auth-block" *ngIf="!(user$ | async)">
+    <button type="button" class="btn btn-light" [routerLink]="['/auth/login']">Login</button>
+    <button type="button" class="btn btn-light" [routerLink]="['/auth/register']">Register</button>
+  </div>
 </nav>

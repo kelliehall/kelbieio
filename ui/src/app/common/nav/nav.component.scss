@@ -17,6 +17,15 @@
   .active-linker {
     color: $bazaar;
   }
+  .auth-block {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    button {
+      margin: 2px;
+      padding: 4px;
+    }
+  }
 }
 
 .menu-icon {

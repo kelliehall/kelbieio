@@ -1,4 +1,10 @@
+@import '../../../variables.scss';
+
 button {
   margin: 2px;
   padding: 4px;
+  border-radius: .1rem;
+  background-color: $dune;
+  color: $amulet;
+  border: 1px solid $amulet;
 }

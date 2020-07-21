@@ -1,3 +1,12 @@
+@import '../variables.scss';
+
 .pad-container {
   margin-left: 200px;
+}
+
+.content {
+  margin-top: 50px;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
 }

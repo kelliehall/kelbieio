@@ -1,5 +1,7 @@
-<kelbie-nav (menuOpened)="toggleMenu($event)"></kelbie-nav>
 
 <div class="container" [ngClass]="{'pad-container': padContainer}">
-  <router-outlet></router-outlet>
+  <kelbie-nav (menuOpened)="toggleMenu($event)"></kelbie-nav>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
 </div>

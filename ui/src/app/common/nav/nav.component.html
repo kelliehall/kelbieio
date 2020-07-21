@@ -3,7 +3,7 @@
     menu
   </span>
   <div class="kelbie-logo" [routerLink]="['/home']">
-    <span class="thats-me">Kellie Hall</span>
+    <!-- <span class="thats-me">Kellie Hall</span> -->
     <span class="material-icons home-button">
       home
     </span>
@@ -19,7 +19,7 @@
     </li>
   </ul>
   <div class="auth-block" *ngIf="!(user$ | async)">
-    <button type="button" class="btn btn-light" [routerLink]="['/auth/login']">Login</button>
-    <button type="button" class="btn btn-light" [routerLink]="['/auth/register']">Register</button>
+    <kelbie-button [routerLink]="['/auth/login']" [buttonText]="'Login'"></kelbie-button>
+    <kelbie-button [routerLink]="['/auth/register']" [buttonText]="'Register'"></kelbie-button>
   </div>
 </nav>

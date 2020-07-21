@@ -1,18 +1,18 @@
 import { NgModule } from "@angular/core";
-import { NavComponent } from './nav/nav.component';
+import { ButtonComponent } from './button/button.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
-    NavComponent
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule,
-    SharedModule
+    RouterModule
   ],
-  exports: [NavComponent]
+  exports: [
+    ButtonComponent
+  ]
 })
-export class CommonModule { }
+export class SharedModule { }

@@ -9,6 +9,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ApiInterceptor } from './api.interceptor';
 import { CommonModule } from './common/common.module';
 import { AuthModule } from './auth/auth.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AuthModule } from './auth/auth.module';
     HttpClientModule,
     BlogModule,
     CommonModule,
-    AuthModule
+    AuthModule,
+    SharedModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

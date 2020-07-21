@@ -8,6 +8,7 @@
   left: 0;
   bottom: 0;
   padding: 15px;
+  border-right: 1px solid $akaroa;
   a {
     font-size: 14px;
     color: $akaroa;
@@ -21,10 +22,6 @@
     position: absolute;
     bottom: 5px;
     right: 10px;
-    button {
-      margin: 2px;
-      padding: 4px;
-    }
   }
 }
 
@@ -41,13 +38,14 @@
   top: 0;
   left: 0;
   padding: 5px;
+  border-bottom: 1px solid $akaroa;
   .kelbie-logo {
     text-decoration: none;
     color: $akaroa;
     position: absolute;
     cursor: pointer;
     top: 7px;
-    right: 0;
+    right: 3px;
     display: flex;
     align-items: center;
   }

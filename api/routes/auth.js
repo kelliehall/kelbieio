@@ -4,6 +4,7 @@ const sanitizer = require('sanitizer');
 const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+const { RSA_PRIVATE } = require('../config/keys');
 
 router.post('/register', (req, res) => {
   let { username, password } = req.body;
@@ -12,35 +13,35 @@ router.post('/register', (req, res) => {
   if (safeUser && safePassword) {
     User.findOne({ username: safeUser }, (error, exists) => {
       if (error) {
-        res.sendStatus(403).json({ error });
+        res.status(403).send({ error });
         return;
       }
       if (!exists) {
         bcrypt.hash(safePassword, 10, (error, hashed) => {
           if (error) {
-            res.sendStatus(403).json({ error });
+            res.status(403).send({ error });
             return;
           }
           let newUser = new User({ username: safeUser, password: hashed });
           User.create(newUser)
             .then(data => {
               let { username, role } = data;
-              res.json({ username, role });
+              res.send({ username, role });
               return;
             })
             .catch(error => {
-              res.sendStatus(404).json({ error });
+              res.status(404).send({ error });
               return;
             });
         });
       } else {
         // username in use
-        res.sendStatus(409).json({ error: 'Username in use' });
+        res.status(409).send({ error: 'Username in use' });
         return;
       }
     });
   } else {
-    res.sendStatus(400);
+    res.status(400);
     return;
   }
 });
@@ -52,7 +53,7 @@ router.post('/login', (req, res) => {
   if (safeUser && safePassword) {
     User.findOne({ username: safeUser }, (error, user) => {
       if (error) {
-        res.sendStatus(403).json({ error });
+        res.status(403).send({ error });
         return;
       }
       if (user) {
@@ -66,23 +67,23 @@ router.post('/login', (req, res) => {
             user.token = jwtBearerToken;
             user.lastLogin = Date.now();
             user.save();
-            res.json({
+            res.send({
               username: user.username,
               role: user.role,
               token: user.token
             });
           } else {
-            res.sendStatus(403).json({ error });
+            res.status(403).send({ error });
             return;
           }
         });
       } else {
-        res.sendStatus(403).json({ error });
+        res.status(403).send({ error });
         return;
       }
     });
   } else {
-    res.sendStatus(403).json({ error });
+    res.status(403).send({ error });
     return;
   }
 });

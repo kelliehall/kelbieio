@@ -6,7 +6,8 @@ const user = mongoose.Schema({
   role: { type: String, default: 'guest' },
   token: String,
   password: String,
-  lastLogin: Date
+  lastLogin: Date,
+  createDate: { type: Date, default: new Date() }
 });
 
 module.exports = mongoose.model('user', user);

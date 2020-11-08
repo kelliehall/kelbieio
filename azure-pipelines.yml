@@ -27,4 +27,4 @@ steps:
     azureSubscription: 'Azure subscription 1 (c51e5322-a159-4bdb-8ec8-a906f8051a77)'
     appType: 'webApp'
     WebAppName: 'ASP-kelbie-a322'
-    packageForLinux: 'ui\dist'
+    packageForLinux: 'ui/dist'
